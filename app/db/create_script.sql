@@ -6,7 +6,6 @@ CREATE DATABASE IF NOT EXISTS `be-p4-toets-336472`;
 
 Use `be-p4-toets-336472`;
 
-
 CREATE TABLE Examen (
     Id                  INT             PRIMARY KEY,
     StudentId           INT,
