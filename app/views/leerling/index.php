@@ -11,17 +11,15 @@
 </head>
 <body>
     <u><?= $data['title']; ?></u>
-    <!-- <p>aantal instructeurs: <?= $data['aantalInstructeurs']; ?></p> -->
 
     <table>
         <thead>
-            <th>Naam</th>
-            <th>Mobiel</th>
-            <th>PakketNaam</th>
-            <th>AantalLessen</th>
-            <th>Prijs</th>
-            <th>Startdatum</th>
-            <th>DatumRijbewijsBehaald</th>
+            <th>Naam Examinator</th>
+            <th>Datum Examen</th>
+            <th>Rijbewijscategorie</th>
+            <th>Rijschool</th>
+            <th>Stad</th>
+            <th>Uitslag</th>
         </thead>
 
         <tbody>
