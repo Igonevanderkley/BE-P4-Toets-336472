@@ -37,7 +37,7 @@ class Examen extends BaseController
          * Het $data-array geeft alle belangrijke info door aan de view
          */
         $data = [
-            'title' => 'Overzicht Afgenomen Exames Examinatoren',
+            'title' => 'Overzicht Afgenomen Examens Examinatoren',
             'LeerlingInformatie' => $examens,
             'tableRows' => $tableRows
         ];
