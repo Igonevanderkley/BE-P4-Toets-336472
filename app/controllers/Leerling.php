@@ -2,17 +2,17 @@
 
 class Leerling extends BaseController
 {
-    private $leerlingModel;
+    private $examenModel;
     public function __construct()
     {
-        $this->leerlingModel = $this->model('LeerlingModel');
+        $this->examenModel = $this->model('ExamenModel');
     }
     public function index()
     {
         /**
          * Haal alle instructeurs op uit de database (model)
          */
-        $leerlingPakket = $this->leerlingModel->getLeerling();
+        $afgenomenExamens = $this->examenModel->getAfgenomenExamens();
 
         // var_dump($leerlingPakket);
         // $aantalInstructeurs = sizeof($instructeurs);
@@ -22,15 +22,14 @@ class Leerling extends BaseController
         //  */
         $tableRows = '';
 
-        foreach ($leerlingPakket as $leerling) {
+        foreach ($afgenomenExamens as $examens) {
             $tableRows .=  "<tr>
-                                <td>$leerling->FullName</td>
-                                <td>$leerling->Mobiel</td>
-                                <td>$leerling->PakketNaam</td>
-                                <td>$leerling->AantalLessen</td>
-                                <td>$leerling->Prijs</td>
-                                <td>$leerling->StartDatumRijlessen</td>
-                                <td>$leerling->DatumRijbewijsBehaald</td>
+                                <td>$examens->ExaminatorFullName</td>
+                                <td>$examens->DatumExamen</td>
+                                <td>$examens->Rijbewijscategorie</td>
+                                <td>$examens->Rijschool</td>
+                                <td>$examens->Stad</td>
+                                <td>$examens->Uitslag</td>
                             </tr>";
         }
 
@@ -38,8 +37,8 @@ class Leerling extends BaseController
          * Het $data-array geeft alle belangrijke info door aan de view
          */
         $data = [
-            'title' => 'Overzicht Rijlespakketten Leerlingen',
-            // 'LeerlingInformatie' => $leerling,
+            'title' => 'Overzicht Afgenomen Exames Examinatoren',
+            'LeerlingInformatie' => $examens,
             'tableRows' => $tableRows
         ];
 
